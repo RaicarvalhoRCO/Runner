@@ -48,6 +48,7 @@ public class Pause : MonoBehaviour {
 
     public void MainMenu()
     {
+	paused = time.deltatime;
         SceneManager.LoadScene(0);
     }
 }
