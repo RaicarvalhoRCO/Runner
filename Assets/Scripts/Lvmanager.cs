@@ -8,17 +8,26 @@ public class Lvmanager : MonoBehaviour
 
     public Text scoretx;
     private int score;
+    private Pause P;
 
-    // Use this for initialization
     void Start()
     {
         score = 0;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        scoretx.text = "Pts: " + score;
-        score += 1;
+
+        if (Time.timeScale == 0)
+        {
+            scoretx.text = "Pts: " + score;
+            score += 0;
+        }
+        else
+        {
+            scoretx.text = "Pts: " + score;
+            score += 1;
+        }
     }
 }
