@@ -112,7 +112,7 @@ public class player : MonoBehaviour
     {
         slidetime = 0.4f;
         anim.SetBool("Dash", true);
-        rb.AddForce(new Vector2(dashforce, 0f));
+        rb.AddForce(new Vector2(0f, dashforce));
     }
 
     void Aplicaanmiacao()
