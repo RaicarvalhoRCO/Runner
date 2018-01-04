@@ -44,6 +44,9 @@ public class player : MonoBehaviour
     private bool Atk = false;
     private bool Dmg = false;
     private bool WBuff = false;
+    private bool Armor = false;
+    private bool ImolationAnim = false;
+    private bool Imolation = false;
 
 
     void Start ()
@@ -153,9 +156,22 @@ public class player : MonoBehaviour
         Shot = WaterShot;
     }
 
+    public void Cure()
+    {
+        energy.CurrentVal -= 50;
+        HP.CurrentVal += 25;
+    }
+
     public void FireBuff()
     {
         Shot = FireShot;        
+    }
+
+    public void ImolationBuff()
+    {
+        energy.CurrentVal -= 50;
+        Imolation = true;
+        anim.SetBool("ImolationAnim", Imolation);
     }
 
     public void EarthBuff()
@@ -163,26 +179,50 @@ public class player : MonoBehaviour
         Shot = EarthShot;     
     }
 
+    public void ArmorBuff()
+    {
+        Armor = true;
+    }
+
     public void AirBuff()
     {
         Shot = AirShot;
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Tiromob")
         {
-            HP.CurrentVal -= 10;
-            rb.AddForce(new Vector2(-50, 0));
-            Dmg = true;
+            if(Armor)
+            {
+                Armor = false;
+                HP.CurrentVal -= 7;
+                Dmg = true;
+            }
+            else
+            {
+                HP.CurrentVal -= 10;
+                rb.AddForce(new Vector2(-50, 0));
+                Dmg = true;
+            }
+            
         }
 
         if (collision.tag == "enemy")
-
         {
-            HP.CurrentVal -= 10;
-            rb.AddForce(new Vector2(-forcapulo, 0));
-            Dmg = true;
+            if (Imolation)
+            {
+                energy.CurrentVal -= 10;
+            }
+            else
+            {
+                HP.CurrentVal -= 10;
+                rb.AddForce(new Vector2(-forcapulo, 0));
+                Dmg = true;
+            }
+           
         }
 
         if (collision.tag == "HPdrop")
