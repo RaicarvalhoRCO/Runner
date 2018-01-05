@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlatCollider : MonoBehaviour {
 
 
-    public GameObject Platform;
+    public Collider2D Platform;
 
     void Start ()
     {
-        Platform.GetComponent<Collider2D>().enabled = false;
+        Platform.enabled = false;
     }
 
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            Platform.GetComponent<Collider2D>().enabled = true;
+            Platform.enabled = true;
         }
     }
 }
