@@ -8,16 +8,18 @@ public class BossWater : MonoBehaviour
     private Animator anim;
     private GameObject clone;
     private Transform mob;
-    private Transform spawntiro;
-    public GameObject tiro;
+    private Transform ShotSpawn;
+    private Transform ShotSpawn2;
+    public GameObject Shot;
     private Rigidbody2D rbmob;
 
 
     private float drop;
     public float shootingrate;
-    private float shootcd = 0f;
-    public float vida = 5;
+    public float shootcd;
+    public float vida = 5f;
     private bool death = false;
+    private float bubles = 0;
 
 
     void Start()
@@ -25,7 +27,7 @@ public class BossWater : MonoBehaviour
 
         rbmob = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        spawntiro = GetComponent<Transform>();
+        ShotSpawn = GetComponent<Transform>();
         mob = GetComponent<Transform>();
 
     }
@@ -36,10 +38,7 @@ public class BossWater : MonoBehaviour
         {
             shootcd -= Time.deltaTime;
         }
-        if (vida < 6)
-        {
-            anim.SetBool("shieldanim", false);
-        }
+        
         Fire();
     }
 
@@ -47,10 +46,16 @@ public class BossWater : MonoBehaviour
     {
         if (shootcd <= 0f)
         {
-            var clone = Instantiate(tiro, spawntiro.position, Quaternion.identity) as GameObject;
-            clone.transform.localScale = this.transform.localScale;
-            shootcd = shootingrate;
+            while(bubles<6)
+            {
+                var clone = Instantiate(Shot, ShotSpawn.position, Quaternion.identity) as GameObject;
+                clone.transform.localScale = this.transform.localScale;
+                bubles++;
+            }
+            bubles = 0f;
+            shootcd = shootingrate;   
         }
+
     }
 
 

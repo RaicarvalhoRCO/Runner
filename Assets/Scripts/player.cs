@@ -207,7 +207,6 @@ public class player : MonoBehaviour
             else
             {
                 HP.CurrentVal -= 10;
-                rb.AddForce(new Vector2(-50, 0));
                 Dmg = true;
             }
             

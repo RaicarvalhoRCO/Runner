@@ -81,7 +81,7 @@ public class MobWater : MonoBehaviour
 
     void spawn()
     {
-        drop = Random.Range(0.0f, 2.0f);
+        drop = Random.Range(0.0f, 4.0f);
         if (drop <= 1)
         {
             clone = Instantiate(HPdrop, mob.transform.position, Quaternion.identity) as GameObject;

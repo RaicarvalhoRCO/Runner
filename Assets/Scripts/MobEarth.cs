@@ -11,6 +11,7 @@ public class MobEarth : MonoBehaviour
     private Transform mob;
     private Transform SpawnPos;
     public GameObject Boulder;
+    public GameObject Wall;
     private Rigidbody2D rbmob;
     public Vector2 speed;
 
@@ -45,6 +46,7 @@ public class MobEarth : MonoBehaviour
         {
             spd = 0;
         }
+        //WallSpell();
         //BoulderThrow();
     }
 
@@ -53,17 +55,16 @@ public class MobEarth : MonoBehaviour
         if (shootcd <= 0f)
         {
             var clone = Instantiate(Boulder, SpawnPos.position, Quaternion.identity) as GameObject;
-            
             shootcd = shootingrate;
         }
     }
 
-    void Wall()
+    void WallSpell()
     {
         if (shootcd <= 0f)
         {
-            var clone = Instantiate(Boulder, SpawnPos.position, Quaternion.identity) as GameObject;
-            clone.transform.localScale = this.transform.localScale;
+            var clone = Instantiate(Wall, SpawnPos.position, Quaternion.identity) as GameObject;
+
             shootcd = shootingrate;
         }
     }
@@ -72,7 +73,7 @@ public class MobEarth : MonoBehaviour
 
     void spawn()
     {
-        drop = Random.Range(0.0f, 2.0f);
+        drop = Random.Range(0.0f, 4.0f);
         if (drop <= 1)
         {
             clone = Instantiate(HPdrop, mob.transform.position, Quaternion.identity) as GameObject;

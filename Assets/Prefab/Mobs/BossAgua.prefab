@@ -138,8 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f442524b3537b78439544031869e228b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiro: {fileID: 0}
+  Shot: {fileID: 1165178092065522, guid: b1c3c1a849fecae4a8a9d507c22cfcfa, type: 2}
   shootingrate: 1
+  shootcd: 0
   vida: 5
 --- !u!212 &212855387730999892
 SpriteRenderer:
