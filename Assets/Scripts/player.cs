@@ -48,6 +48,8 @@ public class player : MonoBehaviour
     private bool ImolationAnim = false;
     private bool Imolation = false;
 
+    public AnimatorOverrideController aoc;
+    public AnimationClip[] waterClips;
 
     void Start ()
     {
@@ -73,8 +75,10 @@ public class player : MonoBehaviour
         Aplicaanmiacao();
         ResetAnim();
 
-
-
+        anim.runtimeAnimatorController = aoc;
+        aoc["Andando"] = waterClips[0];
+        aoc["Jump"] = waterClips[1];
+        aoc["Atk"] = waterClips[2];
     }
 
     void AplicaFisica()

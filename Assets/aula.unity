@@ -861,6 +861,11 @@ MonoBehaviour:
   AirShot: {fileID: 0}
   startsom: {fileID: 8300000, guid: 279cfab2848581544a1d3cd750d31e36, type: 3}
   slidesom: {fileID: 8300000, guid: 33cfff8f8c51051418481c875757828a, type: 3}
+  aoc: {fileID: 22100000, guid: 03b6802a12749c44596d354cbed068f4, type: 2}
+  waterClips:
+  - {fileID: 7400000, guid: 0f1db75137badef4296c15c942aee554, type: 2}
+  - {fileID: 7400000, guid: f9287f4426ffe60468498bc1a99bdb45, type: 2}
+  - {fileID: 7400000, guid: 5b2c32f001f94224d85ff4bb0f7870c7, type: 2}
 --- !u!1 &1547508156
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,11 +906,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1574084856}
   - component: {fileID: 1574084861}
-  - component: {fileID: 1574084860}
   - component: {fileID: 1574084859}
   - component: {fileID: 1574084858}
   - component: {fileID: 1525991594}
   - component: {fileID: 1574084857}
+  - component: {fileID: 1574084860}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1065,8 +1070,7 @@ PolygonCollider2D:
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 95874160302862490, guid: 25183f01de75d194f8b92e257de9da53,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1574084855}
   m_Enabled: 1
