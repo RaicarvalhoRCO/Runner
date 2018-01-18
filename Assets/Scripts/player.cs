@@ -75,10 +75,7 @@ public class player : MonoBehaviour
         Aplicaanmiacao();
         ResetAnim();
 
-        anim.runtimeAnimatorController = aoc;
-        aoc["Andando"] = waterClips[0];
-        aoc["Jump"] = waterClips[1];
-        aoc["Atk"] = waterClips[2];
+
     }
 
     void AplicaFisica()
@@ -148,18 +145,23 @@ public class player : MonoBehaviour
         }
         Jump = false;
         Dmg = false;
-       // if(AnimBuff <=0)
-       // {
-       //     anim.SetBool("W-Buff", false);
-       //     anim.SetBool("W-Run", true);
-        //}
+       if(AnimBuff <=0)
+       {
+            anim.SetBool("W-Buff", false);
+       }
         
     }
 
     public void WaterBuff()
     {
-        //AnimBuff = 0.5f;
-        //anim.SetBool("W-Buff", true);
+        AnimBuff = 0.5f;
+        anim.SetBool("W-Buff", true);
+        anim.runtimeAnimatorController = aoc;
+        aoc["Andando"] = waterClips[0];
+        aoc["Jump"] = waterClips[1];
+        aoc["Atk"] = waterClips[2];
+        aoc["Dash"] = waterClips[3];
+        aoc["Dmg"] = waterClips[4];
         Shot = WaterShot;
     }
 

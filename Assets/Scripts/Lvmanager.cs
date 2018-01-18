@@ -15,7 +15,7 @@ public class Lvmanager : MonoBehaviour
     void Start()
     {
         score = 0;
-        transit = 10f;
+
     }
 
 
@@ -32,9 +32,6 @@ public class Lvmanager : MonoBehaviour
             scoretx.text = "Pts: " + score;
             score += 1;
         }
-        if(transit <= 0f)
-        {
-            var por = Instantiate(portal, portalpos.position, Quaternion.identity) as GameObject;
-        }
+
     }
 }
