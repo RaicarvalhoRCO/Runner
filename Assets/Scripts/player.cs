@@ -10,6 +10,7 @@ public class player : MonoBehaviour
     public float velocidade = 1;
     public float distchao = 0.11f;
     public float maxspeed = 5;
+    public float Jumptime = 1f;
     public float dashforce;
 
     public LayerMask layermask;
@@ -70,7 +71,7 @@ public class player : MonoBehaviour
         slidetime -= Time.deltaTime;
         AnimAtkTime -= Time.deltaTime;
         AnimBuff -= Time.deltaTime;
-
+        Jumptime -= Time.deltaTime;
         AplicaFisica();
         Aplicaanmiacao();
         ResetAnim();
@@ -94,8 +95,10 @@ public class player : MonoBehaviour
     {
         Jump = true;
         if (Jump && Grounded)
-        {
+        { 
+            
             rb.AddForce(new Vector2(0, forcapulo));
+            Jumptime = 0.5f;
         }
     }
 
@@ -143,7 +146,11 @@ public class player : MonoBehaviour
         {
             Atk = false;
         }
-        Jump = false;
+        if(Jumptime <= 0f)
+        {
+            Jump = false;
+        }
+        
         Dmg = false;
        if(AnimBuff <=0)
        {
