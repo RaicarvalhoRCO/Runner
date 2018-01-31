@@ -24,9 +24,8 @@ GameObject:
   - component: {fileID: 114923273555724084}
   - component: {fileID: 82654990623173852}
   - component: {fileID: 212594407356398960}
-  - component: {fileID: 95129428437484506}
   m_Layer: 0
-  m_Name: AirShot 1
+  m_Name: AirShot
   m_TagString: tiro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,23 +159,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95129428437484506
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230489778791566}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c9ebf007dd49d4a4da49f4be393213ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114923273555724084
 MonoBehaviour:
   m_ObjectHideFlags: 1

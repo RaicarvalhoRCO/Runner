@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 60849531498015968}
   - component: {fileID: 50960677384803930}
   - component: {fileID: 114955093871056888}
-  - component: {fileID: 82834547979930572}
   - component: {fileID: 95617913549738728}
   m_Layer: 8
   m_Name: Player
@@ -153,86 +152,6 @@ PolygonCollider2D:
       - {x: -0.13763976, y: -0.14729327}
       - {x: 0.13994491, y: -0.15199208}
       - {x: 0.07581329, y: 0.15813276}
---- !u!82 &82834547979930572
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049238130356138}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 124
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!95 &95617913549738728
 Animator:
   serializedVersion: 3
@@ -278,10 +197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9567660e5c2225b4585b97f60d4972b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcapulo: 200
+  forcapulo: 150
   velocidade: 4
   distchao: 0.2
   maxspeed: 0.2
+  Jumptime: 1
+  Bufftime: 0
   dashforce: 100
   layermask:
     serializedVersion: 2
@@ -303,6 +224,7 @@ MonoBehaviour:
   startsom: {fileID: 8300000, guid: 279cfab2848581544a1d3cd750d31e36, type: 3}
   slidesom: {fileID: 8300000, guid: 33cfff8f8c51051418481c875757828a, type: 3}
   aoc: {fileID: 22100000, guid: 03b6802a12749c44596d354cbed068f4, type: 2}
+  DefaultCountroller: {fileID: 9100000, guid: ba6f9856f89dc2d4d8911a63702800ba, type: 2}
   waterClips:
   - {fileID: 7400000, guid: 0f1db75137badef4296c15c942aee554, type: 2}
   - {fileID: 7400000, guid: f9287f4426ffe60468498bc1a99bdb45, type: 2}

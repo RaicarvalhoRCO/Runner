@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     public float distchao = 0.11f;
     public float maxspeed = 5;
     public float Jumptime = 1f;
+    public float Bufftime = 1f;
     public float dashforce;
 
     public LayerMask layermask;
@@ -50,6 +51,7 @@ public class player : MonoBehaviour
     private bool Imolation = false;
 
     public AnimatorOverrideController aoc;
+    public RuntimeAnimatorController DefaultCountroller;
     public AnimationClip[] waterClips;
 
     void Start ()
@@ -65,13 +67,37 @@ public class player : MonoBehaviour
 
 	void Update ()
     {       
-        if (shootcd > 0)
+        if (shootcd > 0f)
             shootcd -= Time.deltaTime;
 
-        slidetime -= Time.deltaTime;
-        AnimAtkTime -= Time.deltaTime;
-        AnimBuff -= Time.deltaTime;
-        Jumptime -= Time.deltaTime;
+        if (Bufftime > -1f)
+        {
+            Bufftime -= Time.deltaTime;
+        }
+
+        if (slidetime > 0f)
+        {
+            slidetime -= Time.deltaTime;
+        }
+        if (AnimAtkTime > 0f)
+        {
+            AnimAtkTime -= Time.deltaTime;
+        }
+        if (AnimBuff > 0f)
+        {
+            AnimBuff -= Time.deltaTime;
+        }
+        if (Jumptime > 0f)
+        {
+            Jumptime -= Time.deltaTime;
+        }
+
+        if (Bufftime < 0f)
+        {
+            anim.SetBool("Debuff", true);
+            anim.runtimeAnimatorController = DefaultCountroller;
+        }
+
         AplicaFisica();
         Aplicaanmiacao();
         ResetAnim();
@@ -109,7 +135,7 @@ public class player : MonoBehaviour
                 Atk = true;                
                 var Shots = Instantiate(Shot, spawntiro.position, Quaternion.identity) as GameObject;
                 Shots.transform.localScale = this.transform.localScale;
-                shootcd = shootingrate; 
+                shootcd = shootingrate;
                 AnimAtkTime = 0.7f;
         }
     }
@@ -133,16 +159,20 @@ public class player : MonoBehaviour
         anim.SetBool("Dmg", Dmg);
         anim.SetBool("Jump", Jump);
 
-        if (slidetime <= 0)
+        if (slidetime <= 0f)
         {
             anim.SetBool("Dash", false);
         }
-        
+
+
     }
     
     void ResetAnim()
     {
-        if(AnimAtkTime <= 0)
+
+
+        Dmg = false;
+        if (AnimAtkTime <= 0)
         {
             Atk = false;
         }
@@ -150,17 +180,22 @@ public class player : MonoBehaviour
         {
             Jump = false;
         }
-        
-        Dmg = false;
-       if(AnimBuff <=0)
-       {
+        if(AnimBuff <=0)
+        {
             anim.SetBool("W-Buff", false);
-       }
-        
+        }
+        if (Bufftime <= -1f)
+        {
+            anim.SetBool("Debuff", false);
+        }
+
     }
 
+
+
     public void WaterBuff()
-    {
+    {       
+        Bufftime = 5f;
         AnimBuff = 0.5f;
         anim.SetBool("W-Buff", true);
         anim.runtimeAnimatorController = aoc;

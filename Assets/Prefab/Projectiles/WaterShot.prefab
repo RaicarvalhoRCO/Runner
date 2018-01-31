@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 58673608101552740}
   - component: {fileID: 114829369794956620}
   - component: {fileID: 212587086682973288}
-  - component: {fileID: 95941986263054420}
   m_Layer: 0
   m_Name: WaterShot
   m_TagString: tiro
@@ -79,23 +78,6 @@ CircleCollider2D:
   m_Offset: {x: 0.006294422, y: -0.0037766397}
   serializedVersion: 2
   m_Radius: 0.032126836
---- !u!95 &95941986263054420
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111316884164722}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c9ebf007dd49d4a4da49f4be393213ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114829369794956620
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -24,9 +24,8 @@ GameObject:
   - component: {fileID: 114744895691337686}
   - component: {fileID: 82496151454435176}
   - component: {fileID: 212876814165745428}
-  - component: {fileID: 95506770281383228}
   m_Layer: 0
-  m_Name: FireShot 1
+  m_Name: FireShot
   m_TagString: tiro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,23 +159,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95506770281383228
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1360290491171106}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c9ebf007dd49d4a4da49f4be393213ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114744895691337686
 MonoBehaviour:
   m_ObjectHideFlags: 1

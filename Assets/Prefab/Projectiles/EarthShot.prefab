@@ -24,9 +24,8 @@ GameObject:
   - component: {fileID: 114395893195143618}
   - component: {fileID: 82763776261585940}
   - component: {fileID: 212100272323556734}
-  - component: {fileID: 95633830094854068}
   m_Layer: 0
-  m_Name: EarthShot 1
+  m_Name: EarthShot
   m_TagString: tiro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,23 +159,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95633830094854068
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471424747867762}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c9ebf007dd49d4a4da49f4be393213ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114395893195143618
 MonoBehaviour:
   m_ObjectHideFlags: 1
