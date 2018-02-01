@@ -21,7 +21,7 @@ public class MobEarth : MonoBehaviour
     public float shootingrate;
     private float shootcd = 0f;
     public float vida = 5;
-    private bool death = false;
+    public float timeanim = 0f;
 
     void Start()
     {
@@ -42,10 +42,16 @@ public class MobEarth : MonoBehaviour
         {
             shootcd -= Time.deltaTime;
         }
-        if(incamera <= 0)
+        if (timeanim > 0)
+        {
+            timeanim -= Time.deltaTime;
+        }
+        if (incamera <= 0)
         {
             spd = 0;
+            
         }
+        ResetAnim();
         //WallSpell();
         //BoulderThrow();
     }
@@ -54,8 +60,10 @@ public class MobEarth : MonoBehaviour
     {
         if (shootcd <= 0f)
         {
+            anim.SetBool("Atk", true);
             var clone = Instantiate(Boulder, SpawnPos.position, Quaternion.identity) as GameObject;
             shootcd = shootingrate;
+            timeanim = 1f;
         }
     }
 
@@ -84,18 +92,34 @@ public class MobEarth : MonoBehaviour
         }
     }
 
+
+    void ResetAnim()
+    {
+
+        if (timeanim <= 0f)
+        {
+            anim.SetBool("Dmg", false);
+            anim.SetBool("Atk", false);
+        }
+
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "tiro")
         {
             vida--;
+            timeanim = 1f;
             if (vida == 0)
             {
-                death = true;
-                anim.SetBool("death", death);
+                
+                anim.SetBool("Death", true);
                 Destroy(gameObject, 1f);
                 spawn();
+                
             }
+            else
+                anim.SetBool("Dmg", true);
         }
     }
 }

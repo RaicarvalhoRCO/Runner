@@ -39,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666238017789930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.59, y: -0.46, z: -0.04}
-  m_LocalScale: {x: -2.1581712, y: 1.8065494, z: 1.8065494}
+  m_LocalPosition: {x: 3.96, y: -1.14, z: -0.04}
+  m_LocalScale: {x: -0.5550297, y: 0.464601, z: 0.464601}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,7 +81,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.35, y: 0.36}
+    oldSize: {x: 1.15, y: 0.95}
     newSize: {x: 0.95, y: 0.71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   Boulder: {fileID: 1306341867372062, guid: 55c41d90eb2b0ae4c94b32711f286254, type: 2}
   Wall: {fileID: 1769975199177522, guid: f29c6ad31cc0cc24798c26f54a86d9fb, type: 2}
   speed: {x: 0, y: 0}
-  shootingrate: 50
+  shootingrate: 1
   vida: 5
 --- !u!114 &114502828983484346
 MonoBehaviour:
@@ -179,9 +179,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9582b6ad7f111e0458d7f5345148e308, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6292652c0e19e084aa24782928f48557, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.95, y: 0.71}
