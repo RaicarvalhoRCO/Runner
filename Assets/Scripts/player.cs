@@ -49,6 +49,7 @@ public class player : MonoBehaviour
     private bool Armor = false;
     private bool ImolationAnim = false;
     private bool Imolation = false;
+    public bool Dead = false;
 
     public AnimatorOverrideController aoc;
     public RuntimeAnimatorController DefaultCountroller;
@@ -255,7 +256,13 @@ public class player : MonoBehaviour
             else
             {
                 HP.CurrentVal -= 10;
-                Dmg = true;
+                if(HP.CurrentVal == 0)
+                {
+                    Dead = true;
+                    anim.SetBool("Death", true);
+                }
+                else Dmg = true;
+
             }
             
         }

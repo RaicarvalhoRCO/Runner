@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212490820532943704}
   - component: {fileID: 95581624413669030}
   - component: {fileID: 114502828983484346}
-  - component: {fileID: 60516232344625142}
   - component: {fileID: 50567194872365640}
   - component: {fileID: 114489946035999262}
+  - component: {fileID: 60022647682365948}
   m_Layer: 0
   m_Name: MobTerra
   m_TagString: Mob
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666238017789930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.96, y: -1.14, z: -0.04}
+  m_LocalPosition: {x: 3.787, y: -1.096, z: -0.04}
   m_LocalScale: {x: -0.5550297, y: 0.464601, z: 0.464601}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,7 +65,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60516232344625142
+--- !u!60 &60022647682365948
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -89,16 +89,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.044999998, y: 0.17999999}
-      - {x: -0.13499999, y: 0.17999999}
-      - {x: -0.175, y: 0.049999997}
-      - {x: -0.175, y: -0.049999997}
-      - {x: -0.105, y: -0.16}
-      - {x: -0.085, y: -0.17999999}
-      - {x: 0.035, y: -0.17999999}
-      - {x: 0.175, y: -0.049999997}
-      - {x: 0.175, y: 0.01}
-      - {x: 0.125, y: 0.03}
+    - - {x: 0.265, y: -0.375}
+      - {x: 0.205, y: -0.235}
+      - {x: 0.435, y: -0.355}
+      - {x: 0.525, y: -0.275}
+      - {x: 0.575, y: -0.205}
+      - {x: 0.575, y: -0.085}
+      - {x: 0.505, y: 0.015}
+      - {x: 0.36499998, y: 0.114999995}
+      - {x: 0.315, y: 0.295}
+      - {x: 0.235, y: 0.415}
+      - {x: 0.195, y: 0.45499998}
+      - {x: 0.145, y: 0.475}
+      - {x: -0.13499999, y: 0.475}
+      - {x: -0.325, y: 0.345}
+      - {x: -0.475, y: 0.285}
+      - {x: -0.555, y: 0.21499999}
+      - {x: -0.575, y: 0.065}
+      - {x: -0.575, y: -0.445}
+      - {x: -0.545, y: -0.475}
+      - {x: 0.225, y: -0.475}
+    - - {x: -0.265, y: -0.21499999}
+      - {x: -0.255, y: -0.255}
 --- !u!95 &95581624413669030
 Animator:
   serializedVersion: 3
@@ -134,6 +146,7 @@ MonoBehaviour:
   speed: {x: 0, y: 0}
   shootingrate: 1
   vida: 5
+  timeanim: 0
 --- !u!114 &114502828983484346
 MonoBehaviour:
   m_ObjectHideFlags: 1

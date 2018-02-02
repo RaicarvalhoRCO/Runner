@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour {
 
     public bool paused = false;
     public GameObject pausemenu;
-    public string mainMenu;
+
 
 
 

@@ -38,6 +38,7 @@ public class MobEarth : MonoBehaviour
         speed = new Vector2(spd, 0);
         rbmob.velocity = speed;
         incamera -= Time.deltaTime;
+
         if (shootcd > 0)
         {
             shootcd -= Time.deltaTime;
@@ -48,10 +49,9 @@ public class MobEarth : MonoBehaviour
         }
         if (incamera <= 0)
         {
-            spd = 0;
-            
+            spd = 0;          
         }
-        ResetAnim();
+
         //WallSpell();
         //BoulderThrow();
     }
@@ -93,17 +93,6 @@ public class MobEarth : MonoBehaviour
     }
 
 
-    void ResetAnim()
-    {
-
-        if (timeanim <= 0f)
-        {
-            anim.SetBool("Dmg", false);
-            anim.SetBool("Atk", false);
-        }
-
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "tiro")
@@ -112,11 +101,9 @@ public class MobEarth : MonoBehaviour
             timeanim = 1f;
             if (vida == 0)
             {
-                
                 anim.SetBool("Death", true);
                 Destroy(gameObject, 1f);
                 spawn();
-                
             }
             else
                 anim.SetBool("Dmg", true);

@@ -9,8 +9,6 @@ public class Lvmanager : MonoBehaviour
     public Text scoretx;
     private int score;
     private Pause P;
-    private GameObject portal;
-    public  Transform portalpos;
 
     void Start()
     {
