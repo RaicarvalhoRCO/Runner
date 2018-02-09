@@ -21,11 +21,14 @@ public class player : MonoBehaviour
     private float shootingrate = 0.1f;
     private float shootcd = 0f;
     public Transform spawntiro;
-    public GameObject Shot;
+    public GameObject CurrentShot;
+    public GameObject DefaultShot;
     public GameObject WaterShot;
+    public GameObject WaterSkills;
     public GameObject FireShot;
     public GameObject EarthShot;
     public GameObject AirShot;
+
 
 
 
@@ -64,6 +67,7 @@ public class player : MonoBehaviour
 
         HP.Init();
         energy.Init();
+        WaterSkills.SetActive(false);
     }
 
 	void Update ()
@@ -96,8 +100,20 @@ public class player : MonoBehaviour
         if (Bufftime < 0f)
         {
             anim.SetBool("Debuff", true);
+            WBuff = false;
             anim.runtimeAnimatorController = DefaultCountroller;
+            CurrentShot = DefaultShot;
+
         }
+        if(WBuff)
+        {
+            WaterSkills.SetActive(true);
+        }
+        else
+        {
+            WaterSkills.SetActive(false);
+        }
+        
 
         AplicaFisica();
         Aplicaanmiacao();
@@ -134,7 +150,7 @@ public class player : MonoBehaviour
         if (shootcd <= 0f)
         {            
                 Atk = true;                
-                var Shots = Instantiate(Shot, spawntiro.position, Quaternion.identity) as GameObject;
+                var Shots = Instantiate(CurrentShot, spawntiro.position, Quaternion.identity) as GameObject;
                 Shots.transform.localScale = this.transform.localScale;
                 shootcd = shootingrate;
                 AnimAtkTime = 0.7f;
@@ -195,9 +211,9 @@ public class player : MonoBehaviour
 
 
     public void WaterBuff()
-    {       
-        Bufftime = 5f;
-        AnimBuff = 0.5f;
+    {
+        CurrentShot = WaterShot;
+        WBuff = true;
         anim.SetBool("W-Buff", true);
         anim.runtimeAnimatorController = aoc;
         aoc["Andando"] = waterClips[0];
@@ -205,7 +221,9 @@ public class player : MonoBehaviour
         aoc["Atk"] = waterClips[2];
         aoc["Dash"] = waterClips[3];
         aoc["Dmg"] = waterClips[4];
-        Shot = WaterShot;
+        Bufftime = 5f;
+        AnimBuff = 0.5f;
+
     }
 
     public void Cure()
@@ -216,7 +234,7 @@ public class player : MonoBehaviour
 
     public void FireBuff()
     {
-        Shot = FireShot;        
+        CurrentShot = FireShot;        
     }
 
     public void ImolationBuff()
@@ -228,7 +246,7 @@ public class player : MonoBehaviour
 
     public void EarthBuff()
     {
-        Shot = EarthShot;     
+        CurrentShot = EarthShot;     
     }
 
     public void ArmorBuff()
@@ -238,7 +256,7 @@ public class player : MonoBehaviour
 
     public void AirBuff()
     {
-        Shot = AirShot;
+        CurrentShot = AirShot;
     }
 
 

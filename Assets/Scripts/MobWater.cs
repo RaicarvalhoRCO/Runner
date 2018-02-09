@@ -23,6 +23,7 @@ public class MobWater : MonoBehaviour
     public float shootingrate;
     private float shootcd = 0f;
     public float vida = 5;
+    private float startanim;
     private bool death = false;
     private bool shieldanim = false;
 
@@ -33,6 +34,8 @@ public class MobWater : MonoBehaviour
         anim = GetComponent<Animator>();
         spawntiro = GetComponent<Transform>();
         mob = GetComponent<Transform>();
+        anim.SetBool("Start", true);
+        startanim = 1f;
 
         shield();
 
@@ -40,6 +43,14 @@ public class MobWater : MonoBehaviour
 
     void Update()
     {
+        startanim -= Time.deltaTime;
+        if(startanim<=0)
+        {
+            anim.SetBool("Start", false);
+            anim.SetBool("Run", true);
+            anim.SetBool("Atk", false);
+        }
+    
         incamera -= Time.deltaTime;
         if (incamera <= 0)
         {
@@ -53,7 +64,7 @@ public class MobWater : MonoBehaviour
         }
         if (vida < 6)
         {
-            anim.SetBool("shieldanim", false);
+            
         }
         Fire();
     }
@@ -65,6 +76,8 @@ public class MobWater : MonoBehaviour
             var clone = Instantiate(tiro, spawntiro.position, Quaternion.identity) as GameObject;
             clone.transform.localScale = this.transform.localScale;
             shootcd = shootingrate;
+            anim.SetBool("Atk", true);
+            startanim = 1f;
         }
     }
 

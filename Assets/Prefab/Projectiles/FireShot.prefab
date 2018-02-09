@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114744895691337686}
   - component: {fileID: 82496151454435176}
   - component: {fileID: 212876814165745428}
+  - component: {fileID: 95817108392909884}
   m_Layer: 0
   m_Name: FireShot
   m_TagString: tiro
@@ -159,6 +160,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95817108392909884
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360290491171106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b5e55a7f7c7f1e4dbff50a74672e351, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114744895691337686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,13 +223,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4e706985a54392469022b4c7f5abebd, type: 3}
-  m_Color: {r: 0.7352941, g: 0.17301036, b: 0.17301036, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1ba849290a712974e8315ec1f19798f1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.17, y: 0.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

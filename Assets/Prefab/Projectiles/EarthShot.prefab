@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114395893195143618}
   - component: {fileID: 82763776261585940}
   - component: {fileID: 212100272323556734}
+  - component: {fileID: 95087145860036876}
   m_Layer: 0
   m_Name: EarthShot
   m_TagString: tiro
@@ -159,6 +160,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95087145860036876
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471424747867762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43b91c3fb41659e429d1797435b182ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114395893195143618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: da75530e1c809fd49ba8a6ae284762c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78bd2b17da88dff4b95d059b86268b65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
